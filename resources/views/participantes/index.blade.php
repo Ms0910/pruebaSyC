@@ -10,7 +10,7 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-xl sm:rounded-lg p-6 lg:p-8">
                 <div class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">                    
                         <div class="mb-4">
-                            <a href="{{ route('participantes.create') }}" class="bg-cyan-500 dark:bg-cyan-700 hover:bg-cyan-600 dark:hover:bg-cyan-800 text-white font-bold py-2 px-4 rounded">Registrar</a>
+                            <a href="{{ route('participantes.create') }}" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Registrar</a>
                         </div>
                         <table class="table-auto w-full">
                             <thead>

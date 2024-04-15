@@ -41,21 +41,21 @@
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email :</label>
                         <input type="text" name="email" id="email" value="{{ old('email', $participante->email) }}" readonly class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </div>
-                        <div class="mb-5">
-                            <label for="archivo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Archivo cargado :</label>                        
-                                @php
-                                    $nombreArchivo = basename($participante->archivo);
-                                @endphp
-                                @if (pathinfo($nombreArchivo, PATHINFO_EXTENSION) === 'pdf')
-                                    <embed src="{{ asset('archivos/' . $nombreArchivo) }}" type="application/pdf" width="100%" height="600px" />
-                                @else
-                                    <img src="{{ asset('archivos/' . $nombreArchivo) }}" alt="Archivo" style="max-width: 100%; max-height: 600px;">
-                                @endif                        
-                        </div>
+                    <div class="mb-5">
+                        <label for="archivo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Archivo cargado :</label>                        
+                            @php
+                                $nombreArchivo = basename($participante->archivo);
+                            @endphp
+                            @if (pathinfo($nombreArchivo, PATHINFO_EXTENSION) === 'pdf')
+                                <embed src="{{ asset('archivos/documentos/' . $nombreArchivo) }}" type="application/pdf" width="100%" height="600px" />
+                            @else
+                                <img src="{{ asset('archivos/documentos/' . $nombreArchivo) }}" alt="Archivo" style="max-width: 100%; max-height: 600px;">
+                            @endif                        
+                    </div>
                     <br>
-                    <a href="{{ route('participantes.edit', ['participante' => $participante->id,'estado' => 4]) }}" class="bg-violet-500 dark:bg-violet-700 hover:bg-violet-600 dark:hover:bg-violet-800 text-white font-bold py-2 px-4 rounded mr-2">APROBAR</a>
-                    <a href="{{ route('participantes.edit', ['participante' => $participante->id,'estado' => 5]) }}" class="bg-violet-500 dark:bg-violet-700 hover:bg-violet-600 dark:hover:bg-violet-800 text-white font-bold py-2 px-4 rounded mr-2">DENEGAR</a>
-                    <a href="{{ route('participantes.index') }}" class="bg-violet-500 dark:bg-violet-700 hover:bg-violet-600 dark:hover:bg-violet-800 text-white font-bold py-2 px-4 rounded mr-2">ATRAS</a>
+                    <a href="{{ route('participantes.edit', ['participante' => $participante->id,'estado' => 4]) }}" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">| APROBAR   |</a>
+                    <a href="{{ route('participantes.edit', ['participante' => $participante->id,'estado' => 5]) }}" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight"> DENEGAR    |</a>
+                    <a href="{{ route('participantes.index') }}" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">  ATRAS   |</a>
 
                 </form>
 

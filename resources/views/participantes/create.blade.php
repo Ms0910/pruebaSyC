@@ -46,7 +46,7 @@
                                 <input type="file" name="archivo" id="archivo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
                             </div>
                             <br>
-                            <button type="submit" class="bg-violet-500 dark:bg-violet-700 hover:bg-violet-600 dark:hover:bg-violet-800 text-white font-bold py-2 px-4 rounded mr-2">REGISTRARME</button>
+                            <button type="submit" class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">REGISTRARME</button>
                         </form>
             </div>
         </div>
