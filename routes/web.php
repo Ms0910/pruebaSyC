@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ParticipanteController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Middleware\EnsureAdmin;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,6 @@ Route::middleware([
     Route::resource('participantes', ParticipanteController::class)->only(['index'])->middleware(EnsureAdmin::class);
     //Route::get('participantes', 'ParticipanteController@edit');
     route::get('admin/dashboard',[HomeController::class,'index']);
+    Route::get('/send-email', [MailController::class, 'enviarCorreo']);
 });
 

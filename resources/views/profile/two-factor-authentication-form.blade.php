@@ -1,28 +1,28 @@
 <x-action-section>
     <x-slot name="title">
-        {{ __('Two Factor Authentication') }}
+        {{ __('Autenticación de Dos Factores') }}
     </x-slot>
 
     <x-slot name="description">
-        {{ __('Add additional security to your account using two factor authentication.') }}
+        {{ __('Agrega seguridad adicional a tu cuenta utilizando la autenticación de dos factores.') }}
     </x-slot>
 
     <x-slot name="content">
         <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">
             @if ($this->enabled)
                 @if ($showingConfirmation)
-                    {{ __('Finish enabling two factor authentication.') }}
+                    {{ __('Completa la activación de la autenticación de dos factores.') }}
                 @else
-                    {{ __('You have enabled two factor authentication.') }}
+                    {{ __('Has activado la autenticación de dos factores.') }}
                 @endif
             @else
-                {{ __('You have not enabled two factor authentication.') }}
+                {{ __('No has activado la autenticación de dos factores.') }}
             @endif
         </h3>
 
         <div class="mt-3 max-w-xl text-sm text-gray-600 dark:text-gray-400">
             <p>
-                {{ __('When two factor authentication is enabled, you will be prompted for a secure, random token during authentication. You may retrieve this token from your phone\'s Google Authenticator application.') }}
+                {{ __('Cuando la autenticación de dos factores está habilitada, se te pedirá un token seguro y aleatorio durante la autenticación. Puedes recuperar este token desde la aplicación Google Authenticator en tu teléfono.') }}
             </p>
         </div>
 
@@ -31,9 +31,9 @@
                 <div class="mt-4 max-w-xl text-sm text-gray-600 dark:text-gray-400">
                     <p class="font-semibold">
                         @if ($showingConfirmation)
-                            {{ __('To finish enabling two factor authentication, scan the following QR code using your phone\'s authenticator application or enter the setup key and provide the generated OTP code.') }}
+                            {{ __('Para completar la habilitación de la autenticación de dos factores, escanea el siguiente código QR utilizando la aplicación autenticadora de tu teléfono o ingresa la clave de configuración y proporciona el código OTP generado.') }}
                         @else
-                            {{ __('Two factor authentication is now enabled. Scan the following QR code using your phone\'s authenticator application or enter the setup key.') }}
+                            {{ __('La autenticación de dos factores está ahora habilitada. Escanea el siguiente código QR utilizando la aplicación autenticadora de tu teléfono o ingresa la clave de configuración..') }}
                         @endif
                     </p>
                 </div>
@@ -44,7 +44,7 @@
 
                 <div class="mt-4 max-w-xl text-sm text-gray-600 dark:text-gray-400">
                     <p class="font-semibold">
-                        {{ __('Setup Key') }}: {{ decrypt($this->user->two_factor_secret) }}
+                        {{ __('Clave de configuración') }}: {{ decrypt($this->user->two_factor_secret) }}
                     </p>
                 </div>
 

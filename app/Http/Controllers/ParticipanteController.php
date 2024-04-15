@@ -6,6 +6,8 @@ use App\Models\Participante;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Exception;
+use App\Mail\SampleMail;
+use Illuminate\Support\Facades\Mail;
 
 class ParticipanteController extends Controller
 {
@@ -62,18 +64,27 @@ class ParticipanteController extends Controller
     
     public function edit($id, Request $request)
     {
-        try{
+        try {
             $participante = Participante::findOrFail($id);            
             $participante->id_estado = $request->query('estado');
             $participante->save();
 
             
+            $subject = ($request->estado == 4) ? "Participante Aprobado" : "Participante Denegado";
+            $message = ($request->estado == 4) ? "Su solicitud ha sido aprobada." : "Su solicitud ha sido denegada.";
+
+            $data = [
+                'message' => $message,
+            ];
+
+            $mail = new SampleMail($subject, $data);
+            Mail::to($participante->email)->send($mail);
+
             return redirect()->route('participantes.index');
         } catch(Exception $e){
             dd($e);
         }
     }
-    
 
     
     public function update($id, Request $request)
